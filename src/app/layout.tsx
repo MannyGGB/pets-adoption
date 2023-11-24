@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Playpen_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const play_pen = Playpen_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Paws and Claws Adoption Emporium",
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={play_pen.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

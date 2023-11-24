@@ -2,6 +2,7 @@ import React from "react";
 import { getPets, typePets } from "../../lib/petsLib";
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Pets up for adoption | Paws and Claws Adoption Emporium",
@@ -40,7 +41,7 @@ export default function Petspage({
   return (
     <div className="flex flex-col items-center">
       <h1>Checkout the pets</h1>
-      <div className="flex flex-col items-center text-gray-400">
+      <div className="flex flex-col items-center text-[#001d4a]">
         <Link href="/pets">Remove the sort</Link>
         <Link href="/pets?sortByAge=asc">Ascending Age</Link>
         <Link href="/pets?sortByAge=desc">Descending Age</Link>
@@ -49,6 +50,7 @@ export default function Petspage({
         return (
           <div key={index} className="p-3">
             <Link href={`/pets/${pet.slug}`}>{pet.name}</Link>
+            <p>{pet.species}</p>
           </div>
         );
       })}
